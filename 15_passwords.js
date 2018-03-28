@@ -12,6 +12,29 @@
 
 
 
+function passwordValid(password) {
+
+  if (password.length < 8) {
+    return false;
+  }
+
+  if (!password.match(/[A-Z]+2/)) {
+    return false;
+  }
+
+
+  if (!password.match(/[0-9]+/)) {
+    return false
+  }
+
+  if (!password.match(/[&^!%@$!*]/)) {
+    return false;
+  }
+
+  // all passes so this is a valid password
+  return true;
+}
+
 // do not change this code
 
 console.log(passwordValid("16")); // false
@@ -20,4 +43,9 @@ console.log(passwordValid("AAAAAAAA")); // false
 console.log(passwordValid("1721771")); // false
 console.log(passwordValid("&&&&&&&&&&")); // false
 console.log(passwordValid("AB&56")); // false
-console.log(passwordValid("15YHabq615a")); // true
+console.log(passwordValid("15YHabq615a")); // false
+console.log(passwordValid("1A2BC&!uaJ")); //true
+
+
+
+
